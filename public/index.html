@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101224" />
+  <meta name="description" content="Nexus Chat — ruang obrolan real-time yang menghubungkan ide." />
+  <title>Nexus Chat — Real-time Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Nexus Chat beranda">
+        <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7.5 8.5A3.5 3.5 0 0 1 11 5h12a3.5 3.5 0 0 1 3.5 3.5v8A3.5 3.5 0 0 1 23 20h-5.6l-5.8 5v-5H11a3.5 3.5 0 0 1-3.5-3.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 11h10M12 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <span class="brand-copy"><strong>Nexus<span>.</span></strong><small>REALTIME COMMUNITY</small></span>
+      </a>
+
+      <div class="workspace-card">
+        <div class="workspace-icon">N</div>
+        <div class="workspace-meta"><strong>Student Space</strong><span>Workspace publik</span></div>
+        <span class="chevron">⌄</span>
+      </div>
+
+      <div class="sidebar-label">RUANG OBROLAN <span class="label-plus" title="Kanal tersedia">＋</span></div>
+      <nav class="room-nav" aria-label="Pilih ruang obrolan">
+        <button class="room-link active" data-room="umum"><span class="hash">#</span><span class="room-name">umum</span><span class="room-count" id="count-umum">0</span></button>
+        <button class="room-link" data-room="teknologi"><span class="hash">#</span><span class="room-name">teknologi</span><span class="room-count" id="count-teknologi">0</span></button>
+        <button class="room-link" data-room="random"><span class="hash">#</span><span class="room-name">random</span><span class="room-count" id="count-random">0</span></button>
+      </nav>
+
+      <div class="sidebar-promo">
+        <div class="promo-orbit orbit-a"></div><div class="promo-orbit orbit-b"></div>
+        <div class="promo-symbol">✦</div>
+        <span class="promo-kicker">BUILT FOR CONNECTION</span>
+        <strong>Ide hebat dimulai dari obrolan.</strong>
+        <p>Diskusikan, berbagi, dan tumbuh bersama secara langsung.</p>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="server-indicator"><span class="pulse-dot"></span><span id="sidebar-status">Menghubungkan server...</span></div>
+        <button class="profile-button" id="edit-profile" type="button">
+          <span class="avatar avatar-purple" id="profile-avatar">GU</span>
+          <span class="profile-copy"><strong id="profile-name">Guest User</strong><small><span class="online-mini"></span> Aktif sekarang</small></span>
+          <span class="profile-more">•••</span>
+        </button>
+      </div>
+    </aside>
+
+    <section class="chat-panel">
+      <header class="chat-header">
+        <div class="room-title-wrap">
+          <div class="room-icon">#</div>
+          <div><div class="room-heading"><h1 id="current-room-title">umum</h1><span class="public-tag">PUBLIC</span></div><p id="room-subtitle">Tempat ngobrol santai dan berbagi ide.</p></div>
+        </div>
+        <div class="header-actions">
+          <div class="live-pill"><span class="live-dot"></span><span id="header-online-count">0 online</span></div>
+          <button class="icon-button" id="focus-composer" type="button" title="Tulis pesan" aria-label="Tulis pesan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+          <button class="icon-button mobile-details-toggle" id="mobile-members" type="button" title="Anggota online" aria-label="Anggota online"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6M23 11h-6"/></svg></button>
+        </div>
+      </header>
+
+      <div class="announcement"><span class="announcement-icon">✦</span><span><strong>Selamat datang di Nexus!</strong> Jaga obrolan tetap ramah, nyaman, dan saling menghargai.</span><button id="dismiss-announcement" type="button" aria-label="Tutup pengumuman">×</button></div>
+
+      <div class="message-area" id="message-area" aria-live="polite">
+        <div class="welcome-block" id="welcome-block">
+          <div class="welcome-graphic"><div class="graphic-ring ring-one"></div><div class="graphic-ring ring-two"></div><div class="graphic-chat chat-back">✦</div><div class="graphic-chat chat-front"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M8 11a5 5 0 0 1 5-5h18a5 5 0 0 1 5 5v13a5 5 0 0 1-5 5H21l-8 7v-7a5 5 0 0 1-5-5z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M15 16h14M15 22h9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div><span class="spark spark-one">✧</span><span class="spark spark-two">✦</span></div>
+          <span class="eyebrow">RUANG TERBUKA UNTUK SEMUA</span>
+          <h2>Mulai percakapan<br/><span>yang berarti.</span></h2>
+          <p>Ini awal dari sesuatu yang menarik. Kirim pesan pertamamu dan ajak komunitas ikut berdiskusi.</p>
+          <div class="welcome-chips"><span>↗ Real-time</span><span>◉ Komunitas</span><span>✦ Kolaborasi</span></div>
+        </div>
+        <div class="message-list" id="message-list"></div>
+      </div>
+
+      <div class="typing-row" id="typing-row" aria-live="polite"><span class="typing-dots"><i></i><i></i><i></i></span><span id="typing-text"></span></div>
+      <form class="composer" id="message-form">
+        <button class="composer-tool emoji-toggle" id="emoji-toggle" type="button" title="Tambah emoji" aria-label="Tambah emoji">☺</button>
+        <div class="composer-input-wrap"><input id="message-input" type="text" maxlength="1000" autocomplete="off" placeholder="Kirim pesan ke #umum..." aria-label="Tulis pesan"/><span class="composer-hint">Tekan <kbd>Enter</kbd> untuk mengirim</span></div>
+        <button class="send-button" type="submit" aria-label="Kirim pesan"><span>Kirim</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
+        <div class="emoji-picker" id="emoji-picker" hidden><button type="button">😀</button><button type="button">😂</button><button type="button">🔥</button><button type="button">🙌</button><button type="button">❤️</button><button type="button">✨</button><button type="button">👍</button><button type="button">🎉</button></div>
+      </form>
+      <footer class="chat-footer"><span>Made for meaningful conversations <span class="footer-heart">♥</span></span><span class="footer-encryption"><span class="tiny-shield">◇</span> Koneksi langsung via Socket.IO</span></footer>
+    </section>
+
+    <aside class="details-panel" id="details-panel">
+      <div class="details-heading"><div><span class="section-eyebrow">COMMUNITY</span><h2>Anggota</h2></div><span class="member-badge" id="member-badge">0</span></div>
+      <div class="member-section-title"><span>ONLINE SEKARANG</span><span class="online-dot-small"></span></div>
+      <div class="members-list" id="members-list"><div class="member-loading">Menunggu koneksi...</div></div>
+      <div class="detail-divider"></div>
+      <div class="about-room"><div class="about-icon">#</div><span class="section-eyebrow">TENTANG KANAL</span><h3 id="about-room-title"># umum</h3><p id="about-room-description">Ruang utama untuk berbagi cerita, ide, dan kabar terbaru bersama komunitas.</p><div class="about-stats"><div><strong id="about-online-stat">0</strong><span>Anggota online</span></div><div><strong>∞</strong><span>Ide baru</span></div></div></div>
+      <div class="tip-card"><div class="tip-icon">✧</div><strong>Quick tip</strong><p>Gunakan kanal <b>#teknologi</b> untuk ngobrol seputar coding, tools, dan perkembangan digital.</p></div>
+      <div class="details-footer"><span class="footer-brand-dot"></span> Nexus Chat <span>•</span> v1.0</div>
+    </aside>
+  </main>
+
+  <div class="join-overlay" id="join-overlay" role="dialog" aria-modal="true" aria-labelledby="join-title">
+    <div class="join-card">
+      <button class="join-close" id="join-close" type="button" aria-label="Tutup">×</button>
+      <div class="join-logo"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7.5 8.5A3.5 3.5 0 0 1 11 5h12a3.5 3.5 0 0 1 3.5 3.5v8A3.5 3.5 0 0 1 23 20h-5.6l-5.8 5v-5H11a3.5 3.5 0 0 1-3.5-3.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 11h10M12 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <span class="section-eyebrow">YOUR PEOPLE. YOUR SPACE.</span>
+      <h2 id="join-title">Gabung ke <span>Nexus.</span></h2>
+      <p class="join-description">Satu tempat untuk ide, diskusi, dan koneksi yang terjadi secara real-time.</p>
+      <form id="join-form"><label for="username-input">Nama tampilan</label><input id="username-input" type="text" minlength="2" maxlength="24" placeholder="Contoh: Rizki" required autocomplete="nickname"/><div class="join-select-label">Pilih ruang pertama</div><div class="join-room-options"><label class="join-room-option selected"><input type="radio" name="join-room" value="umum" checked/><span class="join-hash">#</span><span><strong>umum</strong><small>Obrolan santai</small></span><span class="radio-mark"></span></label><label class="join-room-option"><input type="radio" name="join-room" value="teknologi"/><span class="join-hash">#</span><span><strong>teknologi</strong><small>Tech & coding</small></span><span class="radio-mark"></span></label><label class="join-room-option"><input type="radio" name="join-room" value="random"/><span class="join-hash">#</span><span><strong>random</strong><small>Obrolan bebas</small></span><span class="radio-mark"></span></label></div><button class="join-submit" type="submit">Masuk ke komunitas <span>↗</span></button></form>
+      <div class="join-secure"><span>◇</span> Terhubung langsung melalui komunikasi real-time</div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
